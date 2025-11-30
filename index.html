@@ -1,114 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Info Finder | VIP Access</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styling for a professional, dark theme */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Dark background */
-        }
-        .vip-gradient {
-            background: linear-gradient(135deg, #1f2937, #111827);
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Phone Dead  Portal</title>
+<style>
+  body {
+    font-family: Arial, sans-serif; background: #000; color: #fff; text-align: center; padding: 20px;
+  }
+  .screen-dead {
+    margin: 20px auto; padding: 50px; border: 3px solid red; background: #300;
+    font-size: 2em; font-weight: bold; display: none;
+  }
+  input, button {
+    font-size: 1em; margin: 10px; padding: 10px;
+  }
+  button {
+    cursor: pointer; background: red; color: white; border: none; border-radius: 4px;
+  }
+  a {
+    color: aqua; display: block; margin: 10px 0;
+  }
+</style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body>
 
-    <!-- Main VIP Access Card -->
-    <div class="vip-gradient max-w-lg w-full p-8 rounded-xl shadow-2xl border border-yellow-500/30 text-white transform hover:scale-[1.01] transition duration-300">
+<h1>Phone Dead  Portal</h1>
+<p>Enter your friend's email or phone number to generate a  link.</p>
 
-        <!-- Header and Logo -->
-        <header class="text-center mb-8">
-            <div class="text-5xl mb-2 text-yellow-400">
-                &#9889; <!-- Lightning icon for premium -->
-            </div>
-            <h1 class="text-3xl font-extrabold tracking-tight">
-                Number Info Finder Portal
-            </h1>
-            <p class="text-lg text-gray-400 font-medium mt-1">
-                Exclusive VIP Subscription Access
-            </p>
-        </header>
+<input type="email" id="email" placeholder="Friend's Email" />
+<br />
+<input type="tel" id="phone" placeholder="Friend's Phone Number" />
+<br />
+<button id="prankBtn">Show Phone Dead Screen</button>
 
-        <!-- Access Details Section -->
-        <section class="mb-8 p-6 bg-gray-900 rounded-lg border border-gray-700/50">
-            <h2 class="text-2xl font-bold mb-4 text-center text-yellow-400">
-                Unlock Premium Insights
-            </h2>
-            
-            <div class="flex justify-between items-center border-b border-gray-700 pb-3 mb-3">
-                <span class="text-lg text-gray-300">Subscription Price:</span>
-                <span class="text-3xl font-extrabold text-white">
-                    ₹1699/-
-                </span>
-            </div>
+<div class="screen-dead" id="deadScreen">
+  ⚠️ Your phone is dead! ⚠️<br />
+  Please recharge immediately.
+</div>
 
-            <p class="text-sm text-gray-400 text-center mt-4">
-                This portal is exclusively available for VIP subscription users. Contact the owner to secure your access.
-            </p>
-        </section>
+<div id="shareLinks"></div>
 
-        <!-- Contact Section -->
-        <section class="text-center">
-            <p class="text-gray-300 mb-4 font-semibold">
-                Ready to subscribe? Contact the owner directly.
-            </p>
-            
-            <!-- Owner Info -->
-            <div class="mb-6 text-sm text-gray-400">
-                Portal Owner: <span class="text-white font-bold">RAVIRAO</span>
-                <br>
-                Contact Number: <span class="text-white font-bold">8009167325</span>
-            </div>
+<script>
+  const prankBtn = document.getElementById("prankBtn");
+  const deadScreen = document.getElementById("deadScreen");
+  const shareLinks = document.getElementById("shareLinks");
 
-            <!-- WhatsApp Button -->
-            <a id="whatsapp-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-green-600 hover:bg-green-700 transition duration-300 transform hover:scale-[1.03] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 focus:ring-offset-gray-900">
-                <!-- WhatsApp Icon (inline SVG for single-file mandate) -->
-                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.001 0c-6.627 0-12 5.373-12 12s5.373 12 12 12c1.77 0 3.472-.397 5.006-1.161l.536.035c.038.002.076.002.115.002.392 0 .783-.004 1.173-.01.213-.003.425-.008.636-.017.067-.003.134-.007.201-.01.07-.004.14-.009.208-.016.142-.014.283-.032.423-.053.056-.008.112-.018.168-.03.047-.01.094-.02.141-.031.054-.012.108-.024.162-.038.033-.008.066-.017.098-.027.064-.02.126-.042.189-.065.031-.012.061-.025.091-.039.06-.027.118-.056.175-.088.029-.016.057-.033.085-.051.056-.035.11-.073.164-.112.026-.019.052-.039.078-.059.053-.042.104-.087.153-.134.024-.022.048-.044.072-.067.045-.044.088-.09.129-.138.02-.023.04-.047.059-.071.042-.054.081-.11.118-.168.018-.028.036-.057.053-.086.035-.059.066-.12.096-.182.016-.031.031-.062.046-.094.029-.062.054-.126.077-.19.011-.031.022-.063.033-.095.021-.064.039-.13.056-.196.008-.031.016-.062.024-.094.015-.064.027-.13.037-.196.004-.031.008-.063.012-.095.008-.064.012-.13.015-.196.001-.031.002-.063.002-.095v-7.904zm-4.721 17.585c-.958.077-1.933.116-2.909.116-5.835 0-10.584-4.749-10.584-10.584s4.749-10.584 10.584-10.584c5.835 0 10.584 4.749 10.584 10.584 0 2.222-.686 4.314-1.979 6.046l-1.073-1.073c.966-1.574 1.488-3.395 1.488-5.004 0-5.328-4.328-9.657-9.657-9.657-5.328 0-9.657 4.329-9.657 9.657s4.329 9.657 9.657 9.657c1.328 0 2.593-.28 3.743-.789l1.102 1.102z"/>
-                </svg>
-                Contact RAVIRAO via WhatsApp
-            </a>
-            
-            <p class="text-xs text-gray-500 mt-2">
-                Clicking this button will open a chat with 8009167325 on WhatsApp.
-            </p>
-        </section>
+  prankBtn.onclick = () => {
+    deadScreen.style.display = "block";
+    shareLinks.innerHTML = "";
 
-        <!-- Placeholder for actual function -->
-        <section class="mt-8 pt-6 border-t border-gray-800">
-            <h3 class="text-xl font-semibold text-gray-300 mb-3">
-                Subscription Preview
-            </h3>
-            <div class="p-4 bg-gray-800 rounded-lg text-gray-400 text-sm italic">
-                <p>— Search Input (Unlocked upon subscription) —</p>
-                <p class="mt-2">...[Detailed number insights and data reports will appear here]...</p>
-            </div>
-        </section>
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
 
-    </div>
+    if(email) {
+      const subject = encodeURIComponent("URGENT: Phone Dead Prank");
+      const body = encodeURIComponent("Hey! Just wanted to let you know your phone is dead. Recharge ASAP! 😁");
+      const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+      shareLinks.innerHTML += `<a href="${mailtoLink}" target="_blank">Send Prank Email to ${email}</a>`;
+    }
 
-    <script>
-        // JavaScript for setting the dynamic WhatsApp link
-        document.addEventListener('DOMContentLoaded', () => {
-            const phoneNumber = '918009167325'; // Assuming +91 (India) as the default prefix for the format
-            const message = encodeURIComponent('Hello RAVIRAO, I am interested in the Number Info Finder VIP Subscription for ₹1699/-. I would like to proceed with the payment and access.');
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
-            
-            const whatsappLink = document.getElementById('whatsapp-link');
-            if (whatsappLink) {
-                whatsappLink.href = whatsappUrl;
-            }
-        });
+    if(phone) {
+      const smsBody = encodeURIComponent("Hey! Your phone is dead. Recharge ASAP! 😁");
+      // tel: link for phone and SMS can behave differently by device
+      const smsLink = `sms:${phone}?body=${smsBody}`;
+      shareLinks.innerHTML += `<a href="${smsLink}" target="_blank">Send  SMS to ${phone}</a>`;
+    }
+  };
+</script>
 
-        // Basic logging setup for environment
-        console.log("Portal UI Initialized. Awaiting VIP Subscription contact.");
-    </script>
 </body>
 </html>
-
